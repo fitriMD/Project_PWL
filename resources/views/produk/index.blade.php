@@ -83,8 +83,13 @@
 
                             </tbody>
                         </table>
+                        
                         {{ $alat_musiks->links() }}
                         <!-- TARUH LINKS DISINI-->
+                        <br><br>
+                        <div class="text-center my-2">
+                            <a href="{{ route('produk.cetak_pdf', $alat_musik->id) }}" class="btn btn-warning">Cetak PDF</a>
+                            </div>
                     </div>
                 </div>
             </div>

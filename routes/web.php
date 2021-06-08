@@ -35,3 +35,6 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/produk', [AdminController::class, 'produk'])->name('admin.produk');
 });
 
+Route::get('produk/cetak_pdf/{produk}', [AlatMusikController::class, 'cetak_pdf'])->name('produk.cetak_pdf');
+
+

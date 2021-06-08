@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AlatMusik;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class AlatMusikController extends Controller
 {
@@ -152,5 +153,11 @@ class AlatMusikController extends Controller
         AlatMusik::find($id)->delete();
         return redirect()->route('produk.index')
             -> with('success', 'Produk Berhasil Dihapus');
+    }
+
+    public function cetak_pdf(){
+        $alat_musiks = AlatMusik::all();
+        $pdf = PDF::loadview('produk.produk_pdf', ['alat_musiks'=>$alat_musiks]);
+        return $pdf->stream();
     }
 }
