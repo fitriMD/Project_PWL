@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlatMusikController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -35,6 +38,6 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/produk', [AdminController::class, 'produk'])->name('admin.produk');
 });
 
-Route::get('produk/cetak_pdf/{produk}', [AlatMusikController::class, 'cetak_pdf'])->name('produk.cetak_pdf');
-
-
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact']);
+Route::get('/index', [App\Http\Controllers\UsersController::class, 'index']);
