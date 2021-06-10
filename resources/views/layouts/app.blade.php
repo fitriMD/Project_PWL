@@ -83,15 +83,20 @@
                                     </li>
                             @endif
                             
-                            {{-- @elseif(Auth::user()->email == 'admin@admin.com')
+                             @elseif(Auth::user()->email == 'admin@admin.com')
                             <li>
                                 <span class="opener">Pelayanan</span>
                                 <ul>
                                     <li><a href="{{ route('produk.index') }}">Data Produk</a></li>
-                                </ul>
-                            </li>                           
+                                    <li><a href="{{ route('produk.index') }}">Data Pegawai</a></li>
+                                    <li><a href="{{ route('produk.index') }}">Riwayat Transaksi</a></li>
 
-                            <li class="nav-item dropdown">
+
+                                </ul>
+                            </li>  
+                                                     
+
+                            <li class="p-3 mb-2 bg-warning text-dark">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -110,11 +115,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
-                            @endif --> --}}
+                            @endif --> 
 
                             @else
-                            <li><a href="{{ route('produk.index') }}">Data Pegawai</a></li>
-                            <li><a href="{{ route('produk.index') }}">Data Transaksi</a></li>
+                            {{-- <li><a href="{{ route('produk.index') }}">Data Produk</a></li> --}}
+
                             <li class="p-3 mb-2 bg-warning text-dark">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
