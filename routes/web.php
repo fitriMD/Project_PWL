@@ -6,6 +6,7 @@ use App\Http\Controllers\AlatMusikController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('home');
+    return view('index');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -44,3 +45,4 @@ Route::get('produk/cetak_pdf/{produk}', [AlatMusikController::class, 'cetak_pdf'
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact']);
 Route::get('/index', [App\Http\Controllers\UsersController::class, 'index']);
+Route::get('/profil', [App\Http\Controllers\ProfilController::class, 'profil']);
