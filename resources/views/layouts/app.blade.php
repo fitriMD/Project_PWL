@@ -88,8 +88,6 @@
                                 <span class="opener">Pelayanan</span>
                                 <ul>
                                     <li><a href="{{ route('produk.index') }}">Data Produk</a></li>
-                                    <li><a href="{{ route('produk.index') }}">Data Pegawai</a></li>
-                                    <li><a href="{{ route('produk.index') }}">Riwayat Transaksi</a></li>
 
 
                                 </ul>
@@ -123,6 +121,10 @@
                             <li class="p-3 mb-2 bg-warning text-dark">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
+                                </a>
+
+                                <a class="dropdown-item" href="{{ url('history') }}">
+                                    Riwayat Transaksi
                                 </a>
 
                                 <a href="{{ route('logout') }}"
@@ -160,6 +162,9 @@
     <script src="{{ asset('js/transition.js') }}"></script>
     <script src="{{ asset('js/owl-carousel.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweet::alert')
 </body>
 
 </html>

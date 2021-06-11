@@ -8,6 +8,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PesanController;
+use App\Http\Controllers\HistoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +29,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/users', function () {
-    return view('index');
-});
+// Route::get('/users', function () {
+//     return view('users.index');
+// });
 
 Route::get('logout', [Auth::class, 'logout'], function () {
     return abort(404);
@@ -46,3 +49,14 @@ Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact']);
 Route::get('/index', [App\Http\Controllers\UsersController::class, 'index']);
 Route::get('/profil', [App\Http\Controllers\ProfilController::class, 'profil']);
+
+Route::get('/pesan/{id}', [PesanController::class, 'index']);
+Route::post('/pesan/{id}', [PesanController::class, 'pesan']);
+
+Route::get('check-out', [PesanController::class, 'check_out']);
+Route::delete('check-out/{id}', [PesanController::class, 'delete']);
+
+Route::get('konfirmasi-check-out', [PesanController::class, 'konfirmasi']);
+
+Route::get('history', [HistoryController::class, 'index']);
+Route::get('history/{id}', [HistoryController::class, 'detail']);
