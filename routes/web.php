@@ -49,6 +49,7 @@ Route::get('/about', [App\Http\Controllers\AboutController::class, 'about']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact']);
 Route::get('/index', [App\Http\Controllers\UsersController::class, 'index']);
 Route::get('/profil', [App\Http\Controllers\ProfilController::class, 'profil']);
+Route::get('/tampil', [App\Http\Controllers\AlatMusikController::class, 'tampil']);
 
 Route::get('/pesan/{id}', [PesanController::class, 'index']);
 Route::post('/pesan/{id}', [PesanController::class, 'pesan']);

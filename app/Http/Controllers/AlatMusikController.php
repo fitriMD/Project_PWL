@@ -160,4 +160,23 @@ class AlatMusikController extends Controller
         $pdf = PDF::loadview('produk.produk_pdf', ['alat_musiks'=>$alat_musiks]);
         return $pdf->stream();
     }
+
+    public function tampil(Request $request){
+        $alat_musiks = AlatMusik::where([
+            ['name','!=',Null],
+            [function($query)use($request){
+                if (($term = $request->term)) {
+                    $query->orWhere('name','LIKE','%'.$term.'%')
+                          ->orWhere('description','LIKE','%'.$term.'%')
+                          ->orWhere('price','LIKE','%'.$term.'%')->get();
+                }
+            }]
+        ])
+        ->orderBy('id','asc')
+        ->simplePaginate(5);
+        
+        return view('users.index' , compact('alat_musiks'))
+        ->with('i',(request()->input('page',1)-1)*5);
+    }
+
 }
