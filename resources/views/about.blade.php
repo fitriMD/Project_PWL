@@ -50,6 +50,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="{{'/index'}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{'/about'}}">About Us</a></li>
+          <li><a class="nav-link scrollto" href="{{'/tampil'}}">Shopping</a></li>
           <li><a class="nav-link scrollto" href="{{'/profil'}}">Our Profil</a></li>
           <li><a class="nav-link scrollto" href="{{'/contact'}}">Contact</a></li>
         </ul>
