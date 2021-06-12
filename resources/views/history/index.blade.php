@@ -9,14 +9,14 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Riwayat Pemesanan</li>
+                    <li class="breadcrumb-item active" aria-current="page">Riwayat Penyewaan</li>
                 </ol>
             </nav>
         </div>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h3><i class="fa fa-history"></i> Riwayat Pemesanan</h3>
+                    <h3><i class="fa fa-history"></i> Riwayat Penyewaan</h3>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -29,7 +29,7 @@
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
-                            @foreach($pesanans as $pesanan)
+                            @foreach($pesanan as $pesanan)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $pesanan->tanggal }}</td>

@@ -11,4 +11,9 @@ class AlatMusik extends Model
     protected $table = 'alat_musiks';
     public $timestamps= false;
     protected $fillable = ['name','description','image','price'];
+
+    public function pesanan_detail() 
+	{
+	     return $this->hasMany('App\PesananDetail','barang_id', 'id');
+	}
 }

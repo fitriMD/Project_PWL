@@ -46,11 +46,11 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
-                                    <img width="150px" src="{{asset('storage/')}}/{{ $pesanan_detail->alat_musiks->image }}" alt="...">
+                                    <img width="150px" src="{{asset('storage/')}}/{{ $pesanan_detail->alatmusik->image }}" alt="...">
                                 </td>
-                                <td>{{ $pesanan_detail->alat_musiks->name }}</td>
+                                <td>{{ $pesanan_detail->alatmusik->name }}</td>
                                 <td>{{ $pesanan_detail->jumlah }} barang</td>
-                                <td>Rp. {{ number_format($pesanan_detail->alat_musiks->price) }}</td>
+                                <td>Rp. {{ number_format($pesanan_detail->alatmusik->price) }}</td>
                                 <td>Rp. {{ number_format($pesanan_detail->subtotal) }}</td>
                                 
                             </tr>
