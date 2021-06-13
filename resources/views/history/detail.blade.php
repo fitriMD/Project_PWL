@@ -62,6 +62,9 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="text-center my-2">
+                        <a href='/history/history_pdf/{{$pesanan->id}}' class="btn btn-warning">Cetak Invoice Transaksi</a>
+                        </div>
                     @endif
                 </div>
             </div>

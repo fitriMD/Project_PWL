@@ -62,3 +62,4 @@ Route::get('konfirmasi-check-out', [PesanController::class, 'konfirmasi']);
 Route::get('history', [HistoryController::class, 'index']);
 Route::get('history/{id}', [HistoryController::class, 'detail']);
 
+Route::get('history/history_pdf/{id}', [HistoryController::class, 'cetak_pdf']);

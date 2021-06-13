@@ -68,7 +68,7 @@
                                         <td>{{ $alat_musik->name }}</td>
                                         <td>{{ $alat_musik->description }}</td>
                                         <td><img width="100px" src="{{ asset('storage/' . $alat_musik->image) }}"></td>
-                                        <td>{{ $alat_musik->price }}</td>
+                                        <td>Rp. {{ number_format($alat_musik->price) }}</td>
                                         <td>
                                             <form action="{{ route('produk.destroy', $alat_musik->id) }}" method="POST"
                                                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus data barang?')">
