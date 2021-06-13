@@ -74,6 +74,7 @@
                                                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus data barang?')">
                                                 <a class="btn btn-info"
                                                     href="{{ route('produk.show', $alat_musik->id) }}">Show</a>
+                                                    <a href="{{ url('pesan') }}/{{ $alat_musik->id }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Pesan</a>
                                                     @if (Auth::user()->email=='admin@admin.com')
                                                     <a class="btn btn-primary"
                                                     href="{{ route('produk.edit', $alat_musik->id) }}">Edit</a>

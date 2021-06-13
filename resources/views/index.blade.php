@@ -50,7 +50,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="{{'/index'}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{'/about'}}">About Us</a></li>
-          <li><a class="nav-link scrollto" href="{{'/tampil'}}">Shopping</a></li>
           <li><a class="nav-link scrollto" href="{{'/profil'}}">Our Profil</a></li>
           <li><a class="nav-link scrollto" href="{{'/contact'}}">Contact</a></li>
         </ul>
@@ -72,9 +71,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Welcome To <span>Galaxy Music Surabaya</span></h2>
-                <p class="animate__animated animate__fadeInUp">Sewa alat musik biasa digunakan untuk kebutuhan acara entertain seperti, konser musik, ataupun sebagai hiburan pelengkap acara utama. Penyedia jasa sewa alat musik juga merupakan salah satu aspek penunjang dalam suatu acara atau event besar maupun kecil. 
-                  Di Galery Music Surabaya, kami menghadirkan sewa alat musik dengan teknologi terbaru, canggih dan satu-satunya di Indonesia. Jasa sewa alat musik dengan merk yang terpercaya oleh artis sebagai riders (jenis merk alat musik) Marshall, Ampeg, Jazz Chorus, Mixer, Rolland, Sonor dan menjadi langganan dari pemain standard sampai riders para artis di GoRental tentunya dapat menunjang kegiatan dalam acara Anda. 
-                  Berbagai jenis sewa alat musik dapat menjadi pilihan untuk Anda seperti, alat musik untuk keperluan band, hiburan, konser musik, gathering, pesta ulang tahun dan lain sebagainya.</p>
+                <p class="animate__animated animate__fadeInUp">Jika Anda ingin melakukan pemesanan login terlebih dahulu. Setelah masuk ke halaman login, jika Anda belum memiliki akun lakukan registrasi.</p>
                 <a href="{{'/home'}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">LOGIN</a>
               </div>
             </div>
