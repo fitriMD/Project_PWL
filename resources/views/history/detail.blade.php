@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <h3>Sukses Check Out</h3>
                     <h5>Pesanan Anda berhasil dicheck out, selanjutnya untuk pembayaran silahkan transfer di rekening <strong>Bank BRI Nomer Rekening : 32113-821312-123</strong> dengan nominal : <strong>Rp. {{ number_format($pesanan->jumlah_harga) }}
-                    </strong> : <strong>Rp. {{ number_format($pesanan->total) }}</strong>
+                    </strong>
                 </div>
             </div>
             <div class="card mt-2">
@@ -27,7 +27,7 @@
                     <h3><i class="fa fa-shopping-cart"></i>Detail Pemesanan</h3>
                     @if(!empty($pesanan))
                     <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
-                    <p align="right">Nama Penyewa : {{ $pesanan->user->username }}</p>
+                    <p align="right">Nama Penyewa : {{ Auth::user()->name}}</p>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -46,23 +46,18 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
-                                    <img width="150px" src="{{asset('storage/')}}/{{ $pesanan_detail->alatmusik->image }}" alt="...">
+                                    <img width="150px" src="{{asset('storage/'.$pesanan_detail->alatmusik->image)}}">
                                 </td>
                                 <td>{{ $pesanan_detail->alatmusik->name }}</td>
                                 <td>{{ $pesanan_detail->jumlah }} barang</td>
                                 <td>Rp. {{ number_format($pesanan_detail->alatmusik->price) }}</td>
-                                <td>Rp. {{ number_format($pesanan_detail->subtotal) }}</td>
+                                <td>Rp. {{ number_format($pesanan_detail->jumlah_harga) }}</td>
                                 
                             </tr>
                             @endforeach
-                            <tr>
-                                <td colspan="5" align="right"><strong>Total Harga :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>
-                     
-                            </tr>
                             
                                 <td colspan="5" align="right"><strong>Total yang harus dibayar :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>
+                                <td align="right"><strong>Rp. {{ number_format($pesanan->jumlah_harga) }}</strong></td>
                      
                             </tr>
                         </tbody>

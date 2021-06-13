@@ -19,9 +19,12 @@
     <section class="tables">
         <div class="container-fluid">
             <div class="row">
+                @if (Auth::user()->email=='admin@admin.com')
                 <div class="col-sm">
                     <a class="btn btn-success" href="{{ route('produk.create') }}">Input Produk</a>
                 </div>
+                @endif
+                
                 <div class="mx-auto pull-right">
                     <div class="float-left">
                         <form action="{{ route('produk.index') }}" method="GET" role="search">
@@ -71,11 +74,14 @@
                                                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus data barang?')">
                                                 <a class="btn btn-info"
                                                     href="{{ route('produk.show', $alat_musik->id) }}">Show</a>
-                                                <a class="btn btn-primary"
+                                                    @if (Auth::user()->email=='admin@admin.com')
+                                                    <a class="btn btn-primary"
                                                     href="{{ route('produk.edit', $alat_musik->id) }}">Edit</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Hapus</button>
+                                                    @endif
+                                                
                                             </form>
                                         </td>
                                     </tr>
@@ -86,10 +92,13 @@
                         
                         {{ $alat_musiks->links() }}
                         <!-- TARUH LINKS DISINI-->
+                        @if (Auth::user()->email=='admin@admin.com')
                         <br><br>
                         <div class="text-center my-2">
                             <a href="{{ route('produk.cetak_pdf', $alat_musik->id) }}" class="btn btn-warning">Cetak PDF</a>
                             </div>
+                        @endif
+                        
                     </div>
                 </div>
             </div>

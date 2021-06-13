@@ -118,17 +118,6 @@ class PesanController extends Controller
     {
         $user = User::where('id', Auth::user()->id)->first();
 
-        // if(empty($user->alamat))
-        // {
-        //     Alert::error('Identitasi Harap dilengkapi', 'Error');
-        //     return redirect('profile');
-        // }
-
-        // if(empty($user->nohp))
-        // {
-        //     Alert::error('Identitasi Harap dilengkapi', 'Error');
-        //     return redirect('profile');
-        // }
 
         $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
         $pesanan_id = $pesanan->id;
@@ -141,8 +130,6 @@ class PesanController extends Controller
         //     $alat_musiks->stok = $alat_musiks->stok-$pesanan_detail->jumlah;
         //     $alat_musiks->update();
         // }
-
-
 
         Alert::success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
         return redirect('history/'.$pesanan_id);

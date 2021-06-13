@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\Pesanan;
-use App\Http\Controllers\User;
+//use App\Http\Controllers\User;
 //use App\Models\User;
-// use App\Http\Controllers\User;
 use App\Models\AlatMusik;
 use App\Models\PesananDetail;
 use Illuminate\Support\Facades\Auth;
@@ -22,14 +21,14 @@ class HistoryController extends Controller
 
     public function index()
     {
-    	$pesanan  = Pesanan::where('user_id', Auth::user()->id)->where('status','!=',0)->get();
+    	$pesanan  = Pesanan::where('user_id', Auth::user()->id)->get();
 
     	return view('history.index', compact('pesanan'));
     }
     public function detail($id)
     {
-        $pesanan = Pesanan::where('id',$id)->first();
-        $pesanan_details = PesananDetail::where('pesanan_id', $pesanan->id)->get();
+        $pesanan = Pesanan::where('id', $id)->first();
+        $pesanan_details = PesananDetail::with('alatmusik')->where('pesanan_id', $pesanan->id)->get();
 
         return view('history.detail', compact('pesanan','pesanan_details'));
 

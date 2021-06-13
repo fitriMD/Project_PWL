@@ -9,7 +9,7 @@ class PesananDetail extends Model
 {
     public function alatmusik()
 	{
-	      return $this->belongsTo(AlatMusik::class);
+	      return $this->belongsTo(AlatMusik::class,'barang_id');
 	}
 
 	public function pesanan()
